@@ -1,2 +1,6 @@
 Sublime Text 3
 
+Install package control: https://packagecontrol.io/installation
+http://www.delphinefoo.com/setting%20up%20your%20environment/react/es6/2016/01/30/linting-for-es6.html
+(it should be sublimelinter-contrib-eslint)
+babel-sublime is "babel" in package index
