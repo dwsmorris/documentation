@@ -8,3 +8,25 @@ babel-sublime is "babel" in package index
 React basics
 
 https://medium.com/@andy.neale/learning-react-setting-up-a-minimal-react-development-environment-fcd17fc7dee1#.vdvwe9gba
+
+VS CODE
+
+https://code.visualstudio.com/Docs/languages/javascript
+in user settings add: 	"editor.renderLineHighlight": false
+npm install --save-dev babel-cli
+npm install --save-dev babel-preset-es2015 babel-preset-react
+then restart vscode
+
+tasks.json:
+{
+    "version": "0.1.0",
+    "command": "cmd",
+    "isShellCommand": true,
+    "tasks": [{
+            "args": ["/c", "${workspaceRoot}/node_modules/.bin/babel", "--presets", "es2015,react", "--watch", "source/", "--out-dir", "build"],
+            "taskName": "babelify",
+            "suppressTaskName": true,
+            "isBuildCommand": true,
+            "isWatching": true
+    }]
+}
