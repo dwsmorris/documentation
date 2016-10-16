@@ -13,6 +13,7 @@ VS CODE
 
 https://code.visualstudio.com/Docs/languages/javascript
 in user settings add: 	"editor.renderLineHighlight": false
+npm install --save react react-dom
 npm install --save-dev babel-cli
 npm install --save-dev babel-preset-es2015 babel-preset-react
 then restart vscode
