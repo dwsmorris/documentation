@@ -16,18 +16,20 @@ in user settings add: 	"editor.renderLineHighlight": false
 npm install --save react react-dom
 npm install --save-dev babel-cli
 npm install --save-dev babel-preset-es2015 babel-preset-react
+npm install --save-dev browserify
 then restart vscode
 
 tasks.json:
 {
     "version": "0.1.0",
-    "command": "cmd",
+    "command": "${workspaceRoot}/node_modules/.bin/babel",
     "isShellCommand": true,
     "tasks": [{
-            "args": ["/c", "${workspaceRoot}/node_modules/.bin/babel", "--presets", "es2015,react", "--watch", "source/", "--out-dir", "build"],
-            "taskName": "babelify",
-            "suppressTaskName": true,
-            "isBuildCommand": true,
-            "isWatching": true
+        "args": ["--presets", "es2015,react", "source/", "--out-dir", "build",
+            "&&", "${workspaceRoot}/node_modules/.bin/browserify", "build/app.js", "-o", "dist/app.js", "-d"],
+        "taskName": "babelify",
+        "suppressTaskName": true,
+        "isBuildCommand": true,
+        "isWatching": true
     }]
 }
